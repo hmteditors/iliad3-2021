@@ -7,7 +7,10 @@
                 <title>Iliad 3 (A)</title>
                 <author>Homer</author>
                 <sponsor>The Homer Multitext project</sponsor>
-                <editor>Add your name here!</editor>
+                <editor>Sophie Cassarino</editor>
+                <editor>Natalie DiMattia</editor>
+                <editor>Rose Kaczmarek</editor>
+                <editor>Stephen Pittman</editor>
             </titleStmt>
             <publicationStmt>
                 <p>Licensed under the Creative Commons, Non-Commercial, Attribution, Share-alike
@@ -21,9 +24,27 @@
     <text>
         <body>
             <div n="3">
-                <head n="title">ἀρχὴ τῆς γάμμα ὀμήρον ραψωδ</head>
-                <l n="1">αὐτὰρ ἐπεὶ κόσμηθεν ἅμ᾽ ἡγεμόνεσσιν ἕκαστοι,</l>
+                <head n="title">ἀρχὴ τῆς γάμμα ὀμήρον ραψωδέ</head>
+                <l n="1">αὐτὰρ ἐπεὶ κόσμηθεν ἅμ᾽ ἡγεμόνεσσιν ἕκαστοι.</l>
                 <l n="2">τρῶες μὲν κλαγγῆι ἐνοπῆι τ’ ἴσαν ὄρνιθες ὥς:</l>
+                <l n="3">ἠΰτε περ κλαγγὴ γεράνων πέλει οὐρανόθι πρό:</l>
+                <l n="4">αἵ τ᾽ ἐπεὶ οὖν χειμῶνα φύγον καὶ ἀθέσφατον ὄμβρον.</l>
+                <l n="5">κλαγγῇ ταί γε πέτονται ἐπ᾽ ὠκεανοῖο ῥοάων</l>
+                <l n="6"><unclear>ἀνδρ</unclear>άσι Πυγμαίοισι φόνον καὶ κῆραι φέρουσαι</l>
+                <l n="7"><unclear>ἠέριαι</unclear> δ᾽ ἄρα ταί γε κακὴν ἔριδα προφέρονται:</l>
+                <l n="8"><unclear>οἳ δ᾽ ἄ</unclear>ρ ἴσαν σιγῇ μένεα πνείοντες Ἀχαιοὶ</l>
+                <l n="9">ἐν θυμῷ μεμαῶτες ἀλεξέμεν ἀλλήλοισιν:</l>
+                <l n="10"></l>
+                <l n="11"></l>
+                <l n="12"></l>
+                <l n="13"></l>
+                <l n="14"></l>
+                <l n="15"></l>
+                <l n="16"></l>
+                <l n="17"></l>
+                <l n="18"></l>
+                <l n="19"></l>
+
 				
             
             </div>
