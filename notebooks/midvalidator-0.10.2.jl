@@ -38,6 +38,9 @@ begin
 	Pkg.status()
 end
 
+# ╔═╡ 5495ea1c-7b56-11eb-39ed-d1078b0808b0
+md"> ## Cataloging"
+
 # ╔═╡ c8c4f0a0-7b50-11eb-0be9-27b71bddbc9f
 html"""
 <style>
@@ -172,6 +175,39 @@ function formatToken(ortho, s)
 	end
 end
 
+# ╔═╡ 62550016-7b59-11eb-1f01-3de7603752cc
+# Format HTML for EditingRepository's reporting on cataloging status.
+function catalogcheck(editorsrepo::EditingRepository)
+	cites = citation_df(editorsrepo)
+	if filesmatch(editorsrepo, cites)
+		md"✅XML files in repository match catalog entries."
+	else
+		htmlstrings = []
+		
+		missingfiles = filesonly(editorsrepo, cites)
+		if ! isempty(missingfiles)
+			fileitems = map(f -> "<li>" * f * "</li>", missingfiles)
+			filelist = "<p>Uncataloged files found on disk: </p><ul>" * join(fileitems,"\n") * "</ul>"
+			
+			hdr = "<div class='warn'><h1>⚠️ Warning</h1>"
+			tail = "</div>"
+			badfileshtml = join([hdr, filelist, tail],"\n")
+			push!(htmlstrings, badfileshtml)
+		end
+		
+		notondisk = citedonly(editorsrepo, cites)
+		if ! isempty(notondisk)
+			nofilelist = "<p>Configured files not found on disk: </p><ul>" * join(nofiletems, "\n") * "</ul>"
+			hdr = "<div class='danger'><h1>🧨🧨 Configuration error 🧨🧨 </h1>" 
+			tail = "</div>"
+			nofilehtml = join([hdr, nofilelist, tail],"\n")
+			push!(htmlstrings,nofilehtml)
+		end
+		HTML(join(htmlstrings,"\n"))
+	end
+
+end
+
 # ╔═╡ ac2d4f3c-7925-11eb-3f8c-957b9de49d88
 css = html"""
 <style>
@@ -249,6 +285,12 @@ md"> Repository and image services to use"
 # root directory.
 function editorsrepo() 
     EditingRepository( dirname(pwd()), "editions", "dse", "config")
+end
+
+# ╔═╡ 6a94c362-7b59-11eb-2a6f-77375afae47e
+begin
+	#loadem
+	editorsrepo() |> catalogcheck
 end
 
 # ╔═╡ cc19dac4-78f6-11eb-2269-453e2b1664fd
@@ -545,6 +587,8 @@ end
 # ╟─d859973a-78f0-11eb-05a4-13dba1f0cb9e
 # ╟─493a315c-78f2-11eb-08e1-137d9a802802
 # ╟─4aacb152-79b2-11eb-349a-cfe86f526399
+# ╟─5495ea1c-7b56-11eb-39ed-d1078b0808b0
+# ╟─6a94c362-7b59-11eb-2a6f-77375afae47e
 # ╟─c8c4f0a0-7b50-11eb-0be9-27b71bddbc9f
 # ╟─1e9d6620-78f3-11eb-3f66-7748e8758e08
 # ╟─c91e8142-78f3-11eb-3410-0d65bfb93f0a
@@ -563,6 +607,7 @@ end
 # ╟─442b37f6-791a-11eb-16b7-536a71aee034
 # ╟─06d139d4-78f5-11eb-0247-df4126777208
 # ╟─0150956a-78f8-11eb-3ebd-793eefb046cb
+# ╠═62550016-7b59-11eb-1f01-3de7603752cc
 # ╟─ac2d4f3c-7925-11eb-3f8c-957b9de49d88
 # ╟─c5d65e86-79b3-11eb-2c3f-d5e5c8efcc5a
 # ╟─54a24382-78f1-11eb-24c8-198fc54ef67e
