@@ -39,7 +39,7 @@ begin
 end
 
 # ╔═╡ 5495ea1c-7b56-11eb-39ed-d1078b0808b0
-md"> ## Cataloging"
+md"> ## Validation: cataloging texts"
 
 # ╔═╡ c8c4f0a0-7b50-11eb-0be9-27b71bddbc9f
 html"""
