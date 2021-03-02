@@ -289,7 +289,7 @@ end
 
 # ╔═╡ 6a94c362-7b59-11eb-2a6f-77375afae47e
 begin
-	#loadem
+	loadem
 	editorsrepo() |> catalogcheck
 end
 
