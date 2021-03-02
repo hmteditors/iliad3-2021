@@ -54,8 +54,9 @@ begin
 	github = Pkg.TOML.parse(read("MID.toml", String))["github"]
 	projectname =	Pkg.TOML.parse(read("MID.toml", String))["projectname"]
 
-	HTML("<blockquote  class='center'><h1>MID validation notebook</h1>" *
-		"<h3>" * projectname * "</h3>" 		*
+	HTML("<blockquote  class='center'>" *
+		"<h1>" * projectname * "</h1>" 		*
+		
 		"<p>On github at <a href=\"" * github * "\">" * github * "</a></p>" *
 		"<p>Editing project from repository in:</p><h5><i>" * dirname(pwd()) * "</i></h5></blockquote>")
 	
